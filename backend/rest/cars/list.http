@@ -1,0 +1,7 @@
+###
+run ../auth/sign-in.http
+
+###
+# @name CARS_LIST
+GET http://localhost:3000/cars?from=2025-04-02T16:10:59.840Z&to=2025-05-02T16:10:59.840Z
+Authorization: Bearer {{AUTH_SIGN_IN.response.body.$.access_token}}

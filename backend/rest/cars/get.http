@@ -1,0 +1,12 @@
+# @name list
+GET http://localhost:3000/cars
+HTTP 200
+
+[Captures]
+car_id: jsonpath "$.data[0].id"
+
+###
+
+# @name get
+GET http://localhost:3000/cars/{{car_id}}
+HTTP 200

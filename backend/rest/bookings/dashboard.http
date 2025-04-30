@@ -1,0 +1,10 @@
+###
+run ../auth/sign-in.http
+
+###
+run ./create.http
+
+###
+# @name BOOKINGS_CREATE
+GET http://localhost:3000/bookings/dashboard HTTP/1.1
+Authorization: {{BOOKINGS_CREATE.request.headers.Authorization}}

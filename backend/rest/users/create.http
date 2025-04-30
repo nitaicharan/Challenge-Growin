@@ -1,0 +1,16 @@
+@password={{$uuid}}
+@email={{$uuid}}@test.com
+
+###
+# @name USERS_CREATE
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "{{$uuid}}",
+  "email": "{{email}}",
+  "password": "{{password}}",
+  "licenseNumber": "{{$uuid}}",
+  "licenseValidUntil": "2025-12-31T23:59:59Z"
+}
