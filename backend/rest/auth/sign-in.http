@@ -1,0 +1,15 @@
+@password=af007d0f-364c-4be2-ade2-8093ba50ee43
+
+###
+run ../users/create.http (@password={{password}})
+
+###
+# @name AUTH_SIGN_IN
+POST http://localhost:3000/auth/sign-in HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email":    "{{USERS_CREATE.response.body.$.email}}",
+  "password": "{{password}}"
+}
